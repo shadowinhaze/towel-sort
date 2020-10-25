@@ -1,6 +1,15 @@
+module.exports = function towelSort(matrix) {
 
-// You should implement your task here.
+  if(!matrix){
+    return [];
+  } else {
+    matrix.forEach(function(item, index) {
+      if ( (index + 1) % 2 === 0 ) {
+          item.reverse();
+        }
+    });
+  
+    return matrix.reduce((prev, curr) => prev.concat(curr), []);
+  }
 
-module.exports = function towelSort (matrix) {
-  return [];
 }
